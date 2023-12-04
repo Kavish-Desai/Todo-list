@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let incompleteTasks = document.getElementById('incomplete-tasks');
     let completedTasks = document.getElementById('completed-tasks');
     let clearButton = document.getElementById('clear');
+    let darkModeButton = document.getElementById('dark_mode');
+
 
     // Function to create a new task
     function createNewTask(task) {
@@ -83,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
         incompleteTasks.appendChild(listItem);
         bindTaskEvents(listItem, completeTask);
     }
-
+    
     // Function to bind task events
     function bindTaskEvents(taskListItem, checkBoxEventHandler) {
         let checkBox = taskListItem.querySelector('input[type=checkbox]');
@@ -107,5 +109,8 @@ document.addEventListener('DOMContentLoaded', function () {
     clearButton.addEventListener('click', function () {
         incompleteTasks.innerHTML = '';
         completedTasks.innerHTML = '';
+    })
+    darkModeButton.addEventListener('click', function () {
+        document.body.classList.toggle('dark_mode');
     });
 });
