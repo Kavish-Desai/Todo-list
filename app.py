@@ -1,8 +1,5 @@
 
 from flask import Flask, render_template
-import mysql.connector
-from mysql.connector import errorcode
-from datetime import date
 
 app = Flask(__name__)
 
